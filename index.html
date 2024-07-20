@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Basics</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>Dynamic Math Quiz</h1>
+    <p id="question"></p>
+
+    <input type="number" id="answer" />
+    <button id="submit" onclick="checkAnswer()">Submit</button>
+
+    <p id="score"></p>
+
+    <script>
+      let num1 = Math.floor(Math.random() * 10);
+      let num2 = Math.floor(Math.random() * 10);
+
+      document.getElementById(
+        "question"
+      ).textContent = `What is ${num1} + ${num2}?`;
+
+      function checkAnswer() {
+        let answer = document.getElementById("answer").value;
+
+        if (parseInt(answer) === num1 + num2) {
+          alert("Correct! Well done!");
+        } else {
+          alert("Incorrect. Try again.");
+        }
+      }
+    </script>
+  </body>
+</html>
